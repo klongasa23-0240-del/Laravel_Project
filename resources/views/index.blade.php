@@ -34,10 +34,10 @@
             <div class="row">
                 <div class="col-lg-6 order-2 order-lg-0">
                     <div class="banner-content-left">
-                        <h3 class="font-xl">Hello, I’m Kristine Longasa, 3rd year College
-                            <span>BSCS.</span>
+                        <h3 class="font-xl">Hello, I’m Kristine Longasa!
+                            <span>3rd Year College - BSCS.</span>
                         </h3>
-                        <p>Product Designer, UI/UX Designer, and developer based in Brazil. Over the past 17 years, as an art director and designer, I’ve worked with big companies and up-and-coming startups.</p>
+                        <p>Learning and studying Programming Language.</p>
                             <a href="#" class="btn btn--primary">
                                 Hire Me
                             </a>
