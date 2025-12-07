@@ -17,10 +17,68 @@
                </a>
                <div class="header-content-menu">
                    <ul>
-                       <li><a href="#">About</a></li>
-                       <li><a href="#">Services</a></li>
+                       <li><a href="#">Home</a></li>
                        <li><a href="#">Projects</a></li>
                        <li><a href="#">Contact</a></li>
+                      
+                        @guest
+                        {{-- LOGIN --}}
+                            <li>
+                            <a href="{{ route('login.form') }}"
+                                style="font-size:12px; letter-spacing:.5px; text-transform:uppercase; color:#333;
+                                        padding:8px 10px; line-height:1; display:inline-block; transition:.2s"
+                                onmouseover="this.style.color='#e63946'"
+                                onmouseout="this.style.color='#333'">
+                                Login
+                            </a>
+                            </li>
+
+                         {{-- SIGN UP --}}
+                            <li>
+                            <a href="{{ route('register.form') }}"
+                                style="background:#e63946; color:#fff; border-radius:20px;
+                                        padding:8px 14px; line-height:1; display:inline-block; font-size:12px;
+                                        text-transform:uppercase; letter-spacing:.5px; transition:.2s"
+                                onmouseover="this.style.background='#cc2f3d'"
+                                onmouseout="this.style.background='#e63946'">
+                                Sign Up
+                            </a>
+                            </li>
+
+                        @endguest
+
+                        @auth
+                            {{-- LOGOUT BUTTON --}}
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    <button type="submit"
+                                        style="
+                                            background:#f5f5f5;
+                                            padding:6px 14px;
+                                            border-radius:20px;
+                                            border:1px solid #ccc;
+                                            cursor:pointer;
+                                            font-size:12px;
+                                            text-transform:uppercase;
+                                            letter-spacing:0.5px;
+                                            transition:0.2s;
+                                        "
+                                        onmouseover="
+                                            this.style.background='#e63946';
+                                            this.style.color='white';
+                                            this.style.borderColor='#e63946';
+                                        "
+                                        onmouseout="
+                                            this.style.background='#f5f5f5';
+                                            this.style.color='#333';
+                                            this.style.borderColor='#ccc';
+                                        ">
+                                        Logout
+                                    </button>
+                                </form>
+                            </li>
+                        @endauth
                    </ul>
                </div>
            </div>
@@ -96,7 +154,7 @@
                 </div>
                 <div class="col-lg-6 order-1 order-lg-0">
                     <div class="banner-content-right">
-                        <img src="dist/images/banner.png" alt="banner-img">
+                        <img src="/images/me.jpeg" alt="banner-img">
                         <img class="dot-shadow-img" src="dist/images/dot-shadow-img.png" alt="dot-shadow">
                     </div>
                 </div>
@@ -112,7 +170,7 @@
               <div class="row">
                   <div class="col-lg-6 col-sm-12">
                     <div class="about-content-left">
-                        <img class="about-img" src="dist/images/about.png" alt="about-img">
+                        <img class="me2-img" src="/images/me2.jpeg" alt="me2-img">
                         <img class="about-white-shadow" src="dist/images/about-white-shadow.png" alt="shadow">
                         <img class="about-black-dot" src="dist/images/black-dot.png" alt="dot-shape">
                         <img class="lg-round-shape" src="dist/images/lg-round-shape.png" alt="shape">
@@ -120,19 +178,18 @@
                   </div>
                   <div class="col-lg-6 col-sm-12">
                     <div class="about-content-right">
-                        <h3 class="font-md">Product Designer, UI/UX Designer, and Developer based in Brazil.</h3>
-                        <p class="para-2">Morbi quam velit, euismod in imperdiet vitae, elementum et elit. Nunc finibus, felis sit amet sollicitudin sollicitudin, nisi magna feugiat enim, in maximus urna enim ac tortor. Nunc in volutpat ipsum, molestie commodo odio. Quisque auctor nisi mi. Aenean venenatis sapien et interdum interdum.</p>
+                        <h3 class="font-md">I want to be a Web developer and a Graphic Designer.</h3>
+                        <p class="para-2">Dreaming something greating, that's why working hard to achieve all my dreams and goals. Achieving my dream in the world of computer science means bringing together my passion for creativity and technology. From a young age, I was drawn to visuals, colors, and design, which naturally inspired me to pursue graphic design. As I explored the digital world further, web development became an exciting extension of that passion—allowing me not only to create beautiful designs but also to build interactive, meaningful experiences online. Combining these skills, I aspire to become a versatile professional who can design striking visuals and develop functional, user-friendly websites. Every step I take in computer science brings me closer to this dream, motivating me to keep learning, improving, and creating.</p>
                         <div class="project-document">
                             <div class="project-year">
-                                <h2 class="font-lg">17+</h2>
+                                <h2 class="font-lg">3+</h2>
                                 <span class="para-2">Years of
-                                  Experience
+                                  Experience in Service Crew
                               </span>
                             </div>
                             <div class="project-completed">
-                                <h2 class="font-lg">325+</h2>
-                                <span class="para-2">Completed
-                                  Projects</span>
+                                <h2 class="font-lg">40+</h2>
+                                <span class="para-2">Graphic Designs</span>
                             </div>
                         </div>
                         <a href="#" class="btn btn--primary">
@@ -783,7 +840,7 @@
    <div class="footer">
     <div class="container">
         <div class="footer-text">
-            <h4>© 2021 — Albert Flores. design &amp; develop by 
+            <h4>© 2025 — Kristine Longasa. All rights reserved.
             <a href="#">Templatecookie</a>
             </h4>
         </div>

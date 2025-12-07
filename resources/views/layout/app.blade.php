@@ -14,7 +14,7 @@
     @include('components.header')
 
     {{-- Page content --}}
-    <main class="pt-24 pb-10">
+    <main class="relative z-0 pt-28 pb-12">
         @yield('content')
     </main>
 

@@ -5,15 +5,18 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
-Route::get('/register',[AuthController::class, 'showRegister'])->name('register.form');
-Route::post('/register',[AuthController::class, 'performRegister'])->name('register');
+// Register
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register.form');
+Route::post('/register', [AuthController::class, 'performRegister'])->name('register.perform');
 
-Route::get('/login',[AuthController::class, 'showlogin'])->name('login.form');
-Route::post('/login',[AuthController::class, 'performlogin'])->name('login');
+// Login
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login.form');
+Route::post('/login', [AuthController::class, 'performLogin'])->name('login.perform');
 
-Route::get('/logout', function () {
+// Logout (POST)
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-});
-Route::view('index', 'index');
+// Optional index view
+Route::view('/index', 'index');

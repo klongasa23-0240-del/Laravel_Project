@@ -1,40 +1,64 @@
-<nav class="fixed inset-x-0 top-0 z-30 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+<nav class="fixed inset-x-0 top-0 z-30 border-b border-gray-300 bg-white/90 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
-            {{-- Brand --}}
+            
+            <!-- Brand -->
             <a href="{{ url('/') }}" class="flex items-center gap-2 group">
-                <div class="h-8 w-8 rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform"></div>
+                <div class="h-8 w-8 rounded-xl bg-gradient-to-br from-red-400 via-red-500 to-red-600
+                            shadow-md shadow-red-400/40 group-hover:shadow-red-500/60 
+                            group-hover:scale-105 transition-all"></div>
+
                 <div class="flex flex-col">
-                    <span class="text-sm font-semibold tracking-tight">
+                    <span class="text-sm font-semibold tracking-tight text-gray-800 group-hover:text-red-700 transition">
                         Kristine Longasa
                     </span>
-                    <span class="text-[11px] text-slate-400 leading-none">
-                        CS Student • Aspiring Full-Stack Dev
+                    <span class="text-[11px] text-gray-600 leading-none">
+                        CS Student • Web Developer • Full-Stack Dev
                     </span>
                 </div>
             </a>
 
-            {{-- Desktop nav --}}
+            <!-- Desktop nav -->
             <div class="hidden md:flex items-center gap-6 text-sm">
-                <a href="{{ url('/') }}" class="hover:text-blue-400 transition">Home</a>
-                <a href="{{ url('/#projects') }}" class="hover:text-blue-400 transition">Projects</a>
-                <a href="{{ url('/#contact') }}" class="hover:text-blue-400 transition">Contact</a>
+
+                <a href="{{ url('/') }}" 
+                   class="text-gray-700 hover:text-red-600 transition">Home</a>
+
+                <a href="{{ url('/#projects') }}" 
+                   class="text-gray-700 hover:text-red-600 transition">Projects</a>
+
+                <a href="{{ url('/#contact') }}" 
+                   class="text-gray-700 hover:text-red-600 transition">Contact</a>
 
                 @auth
-                    <a href="{{ route('index') }}"
-                       class="px-3 py-1.5 rounded-full border border-slate-700 hover:border-blue-500 hover:text-blue-300 text-xs font-medium">
-                        Dashboard
-                    </a>
+                    <!-- LOGOUT BUTTON -->
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit"
+                                class="px-3 py-1.5 rounded-full border border-gray-500 
+           text-gray-700 hover:text-red-600 hover:border-red-600
+           bg-white shadow-sm text-xs font-medium transition">
+                            Logout
+                        </button>
+                    </form>
+
                 @else
+
+                    <!-- Login link -->
                     <a href="{{ route('login.form') }}"
-                       class="text-xs text-slate-300 hover:text-blue-400">
+                       class="text-xs text-gray-600 hover:text-red-600 transition">
                         Login
                     </a>
+
+                    <!-- Register button -->
                     <a href="{{ route('register.form') }}"
-                       class="px-3 py-1.5 rounded-full bg-blue-600 hover:bg-blue-700 text-xs font-medium shadow shadow-blue-600/30">
+                       class="px-3 py-1.5 rounded-full bg-red-600 hover:bg-red-700 
+                              text-xs font-medium shadow-md shadow-red-400/40 transition">
                         Sign up
                     </a>
+
                 @endauth
+
             </div>
         </div>
     </div>
