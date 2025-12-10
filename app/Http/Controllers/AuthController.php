@@ -27,14 +27,17 @@ class AuthController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
-        User::create([
+        $user = User::create([
             'name'     => $validated['name'],
             'email'    => $validated['email'],
             'password' => Hash::make($validated['password']),
         ]);
 
-        return redirect()->route('login.form')
-                         ->with('success', 'Registration success');
+        // Auto-login after register
+        Auth::login($user);
+        $request->session()->regenerate();
+
+        return redirect()->route('dashboard')->with('success', 'Welcome!');
     }
 
     public function performLogin(Request $request)
@@ -46,7 +49,10 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            // Always send to dashboard (ignores previous intended)
+            return redirect()->route('dashboard');
+            // If you prefer intended+fallback:
+            // return redirect()->intended(route('dashboard'));
         }
 
         return back()->withErrors([

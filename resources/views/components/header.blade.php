@@ -45,7 +45,7 @@
                 @else
 
                     <!-- Login link -->
-                    <a href="{{ route('login.form') }}"
+                    <a href="{{ route('login') }}"
                        class="text-xs text-gray-600 hover:text-red-600 transition">
                         Login
                     </a>
