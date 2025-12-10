@@ -27,15 +27,18 @@
    <header class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur-md z-50 shadow-lg">
        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
            <a href="#" class="text-2xl font-bold text-purple-600">Kristine</a>
-           <nav>
-               <ul class="flex space-x-8">
-                   <li><a href="#home" class="text-gray-700 hover:text-purple-600 transition-colors">Home</a></li>
-                   <li><a href="#about" class="text-gray-700 hover:text-purple-600 transition-colors">About</a></li>
-                   <li><a href="#skills" class="text-gray-700 hover:text-purple-600 transition-colors">Skills</a></li>
-                   <li><a href="#services" class="text-gray-700 hover:text-purple-600 transition-colors">Services</a></li>
-                   <li><a href="#contact" class="text-gray-700 hover:text-purple-600 transition-colors">Contact</a></li>
-               </ul>
-           </nav>
+            <nav class="flex items-center gap-6">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="text-gray-700 hover:text-purple-600 transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-gray-700 hover:text-purple-600 transition-colors">About</a></li>
+                    <li><a href="#skills" class="text-gray-700 hover:text-purple-600 transition-colors">Skills</a></li>
+                    <li><a href="#services" class="text-gray-700 hover:text-purple-600 transition-colors">Services</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-purple-600 transition-colors">Contact</a></li>
+                </ul>
+
+
+            </nav>
+
        </div>
    </header>
 

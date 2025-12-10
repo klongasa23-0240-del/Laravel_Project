@@ -45,12 +45,12 @@
            focus:ring-2 focus:ring-blue-500">
             </div>
 
-            <button type="submit" class="w-full py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg">Create Account</button>
+            <button type="submit" class="w-full py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">Create Account</button>
         </form>
 
         <p class="text-sm text-gray-600 mt-4">
             Already have an account?
-            <a href="{{ route('login.form') }}" class="text-red-600 hover:underline">Sign in</a>
+            <a href="{{ route('login') }}" class="text-purple-600 hover:underline">Sign in</a>
         </p>
     </div>
 </div>

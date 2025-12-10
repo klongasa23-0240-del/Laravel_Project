@@ -7,7 +7,7 @@
         <p class="text-sm text-gray-600 mb-4">Welcome back! Log in to continue.</p>
 
         @if ($errors->any())
-            <div class="mb-4 p-3 bg-rose-100 border border-rose-300 text-sm text-rose-700 rounded">
+            <div class="mb-4 p-3 bg-rose\-100 border border-rose-300 text-sm text-rose-700 rounded">
                 @foreach ($errors->all() as $error)
                     <p>{{ $error }}</p>
                 @endforeach
@@ -37,12 +37,19 @@
            focus:ring-2 focus:ring-blue-500">
             </div>
 
-            <button type="submit" class="w-full py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg">Login</button>
+            <div class="flex justify-end">
+                <a href="{{ route('password.request') }}" class="text-sm text-purple-600 hover:underline">
+                    Forgot password?
+                </a>
+            </div>
+
+
+            <button type="submit" class="w-full py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">Login</button>
         </form>
 
         <p class="text-sm text-gray-600 mt-4">
             Don't have an account?
-            <a href="{{ route('register.form') }}" class="text-red-600 hover:underline">Register</a>
+            <a href="{{ route('register.form') }}" class="text-purple-600 hover:underline">Register</a>
         </p>
     </div>
 </div>
